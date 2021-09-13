@@ -1,0 +1,111 @@
+:root {
+  --var-body-bg: #080d1b;
+  --var-destak-color: #661bbd;
+  --var-destak-color-darken: #4c1886;
+  --var-main-color: #0f1731;
+  --var-main-color-light: #222d52;
+}
+@font-face {
+  font-family: "Display St";
+  src: url(./Open-24-Display-St.ttf);
+}
+* {
+  margin: 0;
+  padding: 0;
+}
+body {
+  min-height: 100vh;
+  background-color: var(--var-body-bg);
+  color: #fff;
+  font-family: sans-serif;
+}
+header {
+  padding: 30px 0;
+}
+h1 {
+  text-align: center;
+  text-shadow: 2px 2px var(--var-destak-color);
+}
+main {
+  width: calc(450px - 120px);
+  margin: auto;
+  padding: 30px 60px;
+  border-radius: 10px;
+  background-color: var(--var-main-color);
+}
+.display-container {
+  overflow: hidden;
+  margin-bottom: 30px;
+  padding: 10px;
+  border: 2px solid var(--var-main-color-light);
+  box-shadow: inset 5px 5px #00000038;
+  background: linear-gradient(#ffffff0a, transparent);
+  text-align: right;
+  font-family: "Display St";
+}
+.display-container #show-count,
+.display-container #result {
+  float: right;
+  width: 100%;
+  letter-spacing: 0.2rem;
+}
+.display-container #show-count {
+  font-size: 1.5rem;
+  font-weight: 200;
+}
+.display-container #result {
+  margin-top: 5px;
+  font-size: 2.3rem;
+  font-weight: 500;
+}
+.buttons-container {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-auto-rows: 50px;
+  gap: 10px;
+}
+.buttons-container .button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 7px;
+  background-color: var(--var-main-color-light);
+  box-shadow: 0 5px #00000038;
+  font-weight: 500;
+  font-size: 1.2rem;
+  cursor: pointer;
+  transition: background-color 150ms, transform 50ms;
+}
+.buttons-container .button:hover {
+  background-color: var(--var-destak-color);
+}
+.buttons-container .button:active {
+  transform: translateY(5px);
+  box-shadow: none;
+  background-color: var(--var-destak-color-darken);
+}
+.buttons-container #bar {
+  grid-column: 4;
+}
+.buttons-container #zero {
+  grid-column: span 2;
+}
+
+@media screen and (max-width: 550px) {
+  body {
+    padding: 10px;
+  }
+  main {
+    width: calc(100% - 60px);
+    padding: 30px;
+  }
+}
+@media screen and (max-width: 350px) {
+  h1 {
+    font-size: 1.7rem;
+  }
+  main {
+    width: calc(100% - 40px);
+    padding: 20px;
+  }
+}
